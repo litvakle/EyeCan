@@ -40,7 +40,6 @@
 		3A6B2442298A629A00DCE026 /* PDFReaderContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReaderContainerView.swift; sourceTree = "<group>"; };
 		3A6B2444298A8EC600DCE026 /* PDFContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFContentView.swift; sourceTree = "<group>"; };
 		3A6B2446298A9AB100DCE026 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		3A6B2449298A9AEF00DCE026 /* RPReplay_Final1675254438.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RPReplay_Final1675254438.mp4; sourceTree = "<group>"; };
 		3ABA6465298A450200D8F062 /* EyeCan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeCan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABA6468298A450200D8F062 /* EyeCanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeCanApp.swift; sourceTree = "<group>"; };
 		3ABA646A298A450200D8F062 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,19 +111,10 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		3A6B2448298A9AC400DCE026 /* Demonstration */ = {
-			isa = PBXGroup;
-			children = (
-				3A6B2449298A9AEF00DCE026 /* RPReplay_Final1675254438.mp4 */,
-			);
-			path = Demonstration;
-			sourceTree = "<group>";
-		};
 		3ABA645C298A450200D8F062 = {
 			isa = PBXGroup;
 			children = (
 				3A6B2446298A9AB100DCE026 /* README.md */,
-				3A6B2448298A9AC400DCE026 /* Demonstration */,
 				3ABA6467298A450200D8F062 /* EyeCan */,
 				3A6B2434298A53A700DCE026 /* EyeCanTests */,
 				3ABA6466298A450200D8F062 /* Products */,

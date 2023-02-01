@@ -17,6 +17,14 @@ class PDFReaderViewModelTests: XCTestCase {
         
         XCTAssertEqual(reader.readFileCallCount, 2)
     }
+    
+    func test_readFile_doesNotRequestReaderOnFailure() {
+        let (sut, reader) = makeSUT()
+        
+        sut.readFile(from: .failure(anyNSError()))
+        
+        XCTAssertEqual(reader.readFileCallCount, 0)
+    }
 
     // MARK: - Helpers
     

@@ -46,8 +46,9 @@ struct PDFReaderView: View {
             Text(text)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .multilineTextAlignment(.leading)
-            
+                
         }
+        .padding()
         .background {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder()
@@ -58,6 +59,6 @@ struct PDFReaderView: View {
 
 struct PDFReaderView_Previews: PreviewProvider {
     static var previews: some View {
-        PDFReaderView(text: "", onFileHasBeenChosen: { _ in })
+        PDFReaderView(text: "Any text ", onFileHasBeenChosen: { _ in })
     }
 }

@@ -11,7 +11,7 @@ struct PDFReaderContainerView: View {
     @StateObject var vm = PDFReaderViewModel(reader: PDFKitReader())
     
     var body: some View {
-        PDFReaderView(text: vm.text, onFileHasBeenChosen: vm.readFile)
+        PDFReaderView(pdfContent: PDFContentView(data: vm.data), onFileHasBeenChosen: vm.readFile)
             .alert("Error", isPresented: $vm.showError) {
                 Button("OK", action: {})
             } message: {

@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import PDFKit
 
 struct PDFReaderView: View {
-    let text: String
+    let pdfContent: PDFContentView
     let onFileHasBeenChosen: (Result<URL, Error>) -> Void
 
     @State private var showChooseFileDialog = false
@@ -17,7 +18,7 @@ struct PDFReaderView: View {
         VStack {
             title
             chooseFileButton
-            fileContent
+            pdfContent
         }
         .padding(.horizontal)
         .fileImporter(
@@ -30,6 +31,7 @@ struct PDFReaderView: View {
     var title: some View {
         Text("PDF Reader")
             .font(.largeTitle)
+            .accessibilityAddTraits(.isHeader)
     }
     
     var chooseFileButton: some View {
@@ -40,25 +42,11 @@ struct PDFReaderView: View {
         }
         .buttonStyle(.bordered)
     }
-    
-    var fileContent: some View {
-        ScrollView {
-            Text(text)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .multilineTextAlignment(.leading)
-                
-        }
-        .padding()
-        .background {
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder()
-                .foregroundColor(.secondary)
-        }
-    }
 }
+
 
 struct PDFReaderView_Previews: PreviewProvider {
     static var previews: some View {
-        PDFReaderView(text: "Any text ", onFileHasBeenChosen: { _ in })
+        PDFReaderView(pdfContent: PDFContentView(data: nil), onFileHasBeenChosen: { _ in })
     }
 }

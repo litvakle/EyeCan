@@ -35,8 +35,8 @@ class PDFReaderViewModel: ObservableObject {
     
     private func handleReadResult(_ result: Result<String, PDFReaderError>) {
         switch result {
-        case .success:
-            break
+        case let .success(text):
+            self.text = text
         case let .failure(error):
             self.error = .reader(error: error.localizedDescription)
         }

@@ -44,6 +44,16 @@ class PDFReaderViewModelTests: XCTestCase {
             XCTAssertEqual(sut.error, .reader(error: error.localizedDescription))
         }
     }
+    
+    func test_readFile_deliversTextOnSuccess() {
+        let (sut, reader) = makeSUT()
+        let text = "Any text"
+        reader.text = text
+        
+        sut.readFile(from: .success(anyURL()))
+        
+        XCTAssertEqual(sut.text, text)
+    }
 
     // MARK: - Helpers
     
@@ -60,6 +70,7 @@ class PDFReaderViewModelTests: XCTestCase {
     private class PDFReaderSpy: PDFReader {
         var readFileCallCount = 0
         var error: PDFReaderError?
+        var text = ""
         
         func readFile(from url: URL) -> Result<String, EyeCan.PDFReaderError> {
             readFileCallCount += 1
@@ -68,7 +79,7 @@ class PDFReaderViewModelTests: XCTestCase {
                 return .failure(error)
             }
             
-            return .success("")
+            return .success(text)
         }
     }
 }

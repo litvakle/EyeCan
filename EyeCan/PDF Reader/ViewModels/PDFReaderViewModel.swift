@@ -24,6 +24,7 @@ class PDFReaderViewModel: ObservableObject {
     }
     
     func readFile(from result: Result<URL, Error>) {
+        error = nil
         switch result {
         case let .success(url):
             let readResult = reader.readFile(from: url)

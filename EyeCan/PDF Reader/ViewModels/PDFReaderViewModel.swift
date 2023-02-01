@@ -18,7 +18,7 @@ class PDFReaderViewModel: ObservableObject {
         self.reader = reader
     }
     
-    enum PDFReaderError {
+    enum PDFReaderError: Equatable {
         case chooseDialog(error: String)
         case pdfReader(error: String)
     }
@@ -27,8 +27,8 @@ class PDFReaderViewModel: ObservableObject {
         switch result {
         case let .success(url):
             reader.readFile(from: url)
-        default:
-            break
+        case let .failure(error):
+            self.error = .chooseDialog(error: error.localizedDescription)
         }
     }
 }

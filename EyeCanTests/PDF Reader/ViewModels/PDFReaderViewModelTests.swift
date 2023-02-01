@@ -45,14 +45,13 @@ class PDFReaderViewModelTests: XCTestCase {
         }
     }
     
-    func test_readFile_deliversTextOnSuccess() {
+    func test_readFile_deliversDataOnSuccess() {
         let (sut, reader) = makeSUT()
-        let text = "Any text"
-        reader.text = text
+        reader.data = anyData()
         
         sut.readFile(from: .success(anyURL()))
         
-        XCTAssertEqual(sut.text, text)
+        XCTAssertEqual(sut.data, anyData())
     }
     
     func test_readFile_doesNotDeliverErrorOnSuccessAfterPreviousError() {
@@ -93,16 +92,16 @@ class PDFReaderViewModelTests: XCTestCase {
     private class PDFReaderSpy: PDFReader {
         var readFileCallCount = 0
         var error: PDFReaderError?
-        var text = ""
+        var data = anyData()
         
-        func readFile(from url: URL) -> Result<String, EyeCan.PDFReaderError> {
+        func readFile(from url: URL) -> Result<Data, EyeCan.PDFReaderError> {
             readFileCallCount += 1
             
             if let error = error {
                 return .failure(error)
             }
             
-            return .success(text)
+            return .success(data)
         }
     }
 }

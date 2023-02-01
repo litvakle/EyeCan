@@ -8,20 +8,12 @@
 import PDFKit
 
 class PDFKitReader: PDFReader {
-    func readFile(from url: URL) -> Result<String, PDFReaderError> {
+    func readFile(from url: URL) -> Result<Data, PDFReaderError> {
         guard url.startAccessingSecurityScopedResource() else { return .failure(.fileAccessError) }
         guard let pdf = PDFDocument(url: url) else { return .failure(.readFileError) }
-
-        let pageCount = pdf.pageCount
-        var documentContent = ""
-        for pageNum in 0..<pageCount {
-            guard let page = pdf.page(at: pageNum) else { continue }
-            guard let pageContent = page.string else { continue }
-            documentContent += pageContent
-        }
-
+        guard let data = pdf.dataRepresentation() else { return .failure(.readFileError) }
         url.stopAccessingSecurityScopedResource()
         
-        return .success(documentContent)
+        return .success(data)
     }
 }

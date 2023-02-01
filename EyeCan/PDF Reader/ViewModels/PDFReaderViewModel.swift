@@ -9,7 +9,7 @@ import Combine
 import PDFKit
 
 class PDFReaderViewModel: ObservableObject {
-    @Published private(set) var text = ""
+    @Published private(set) var data: Data?
     @Published private(set) var error: ViewModelError?
     @Published var showError = false
     
@@ -48,10 +48,10 @@ class PDFReaderViewModel: ObservableObject {
         }
     }
     
-    private func handleReadResult(_ result: Result<String, PDFReaderError>) {
+    private func handleReadResult(_ result: Result<Data, PDFReaderError>) {
         switch result {
-        case let .success(text):
-            self.text = text
+        case let .success(data):
+            self.data = data
         case let .failure(error):
             self.error = .reader(error: error.localizedDescription)
         }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PDFReader {
-    func readFile(from url: URL) -> Result<String, PDFReaderError>
+    func readFile(from url: URL) -> Result<Data, PDFReaderError>
 }
 
 enum PDFReaderError: Error, CaseIterable {

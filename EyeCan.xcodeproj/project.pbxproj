@@ -11,6 +11,7 @@
 		3ABA646B298A450200D8F062 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA646A298A450200D8F062 /* ContentView.swift */; };
 		3ABA646D298A450400D8F062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA646C298A450400D8F062 /* Assets.xcassets */; };
 		3ABA6470298A450400D8F062 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA646F298A450400D8F062 /* Preview Assets.xcassets */; };
+		3ABA6477298A451900D8F062 /* PDFReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA6476298A451900D8F062 /* PDFReaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		3ABA646A298A450200D8F062 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3ABA646C298A450400D8F062 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3ABA646F298A450400D8F062 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3ABA6476298A451900D8F062 /* PDFReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				3ABA6468298A450200D8F062 /* EyeCanApp.swift */,
 				3ABA646A298A450200D8F062 /* ContentView.swift */,
+				3ABA6476298A451900D8F062 /* PDFReaderView.swift */,
 				3ABA646C298A450400D8F062 /* Assets.xcassets */,
 				3ABA646E298A450400D8F062 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ABA646B298A450200D8F062 /* ContentView.swift in Sources */,
+				3ABA6477298A451900D8F062 /* PDFReaderView.swift in Sources */,
 				3ABA6469298A450200D8F062 /* EyeCanApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

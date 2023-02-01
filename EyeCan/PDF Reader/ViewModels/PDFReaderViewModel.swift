@@ -10,7 +10,7 @@ import PDFKit
 
 class PDFReaderViewModel: ObservableObject {
     @Published private(set) var text = ""
-    @Published private(set) var error: PDFReaderError?
+    @Published private(set) var error: ViewModelError?
     
     let reader: PDFReader
     
@@ -18,17 +18,27 @@ class PDFReaderViewModel: ObservableObject {
         self.reader = reader
     }
     
-    enum PDFReaderError: Equatable {
+    enum ViewModelError: Equatable {
         case chooseDialog(error: String)
-        case pdfReader(error: String)
+        case reader(error: String)
     }
     
     func readFile(from result: Result<URL, Error>) {
         switch result {
         case let .success(url):
-            reader.readFile(from: url)
+            let readResult = reader.readFile(from: url)
+            handleReadResult(readResult)
         case let .failure(error):
             self.error = .chooseDialog(error: error.localizedDescription)
+        }
+    }
+    
+    private func handleReadResult(_ result: Result<String, PDFReaderError>) {
+        switch result {
+        case .success:
+            break
+        case let .failure(error):
+            self.error = .reader(error: error.localizedDescription)
         }
     }
 }

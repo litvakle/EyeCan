@@ -11,7 +11,7 @@ protocol PDFReader {
     func readFile(from url: URL) -> Result<String, PDFReaderError>
 }
 
-enum PDFReaderError: Error {
+enum PDFReaderError: Error, CaseIterable {
     case fileAccessError
     case readFileError
 }

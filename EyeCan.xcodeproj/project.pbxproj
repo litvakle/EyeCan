@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A6B242E298A532500DCE026 /* PDFReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B242D298A532500DCE026 /* PDFReaderView.swift */; };
-		3A6B2436298A53A700DCE026 /* EyeCanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B2435298A53A700DCE026 /* EyeCanTests.swift */; };
+		3A6B2436298A53A700DCE026 /* PDFReaderViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B2435298A53A700DCE026 /* PDFReaderViewModelTests.swift */; };
+		3A6B2441298A577400DCE026 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B2440298A577400DCE026 /* SharedTestHelpers.swift */; };
 		3ABA6469298A450200D8F062 /* EyeCanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA6468298A450200D8F062 /* EyeCanApp.swift */; };
 		3ABA646B298A450200D8F062 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA646A298A450200D8F062 /* ContentView.swift */; };
 		3ABA646D298A450400D8F062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA646C298A450400D8F062 /* Assets.xcassets */; };
@@ -31,7 +32,8 @@
 /* Begin PBXFileReference section */
 		3A6B242D298A532500DCE026 /* PDFReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReaderView.swift; sourceTree = "<group>"; };
 		3A6B2433298A53A700DCE026 /* EyeCanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyeCanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A6B2435298A53A700DCE026 /* EyeCanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeCanTests.swift; sourceTree = "<group>"; };
+		3A6B2435298A53A700DCE026 /* PDFReaderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReaderViewModelTests.swift; sourceTree = "<group>"; };
+		3A6B2440298A577400DCE026 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		3ABA6465298A450200D8F062 /* EyeCan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeCan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABA6468298A450200D8F062 /* EyeCanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeCanApp.swift; sourceTree = "<group>"; };
 		3ABA646A298A450200D8F062 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,9 +73,34 @@
 		3A6B2434298A53A700DCE026 /* EyeCanTests */ = {
 			isa = PBXGroup;
 			children = (
-				3A6B2435298A53A700DCE026 /* EyeCanTests.swift */,
+				3A6B243E298A575200DCE026 /* Helpers */,
+				3A6B243C298A53E200DCE026 /* PDF Reader */,
 			);
 			path = EyeCanTests;
+			sourceTree = "<group>";
+		};
+		3A6B243C298A53E200DCE026 /* PDF Reader */ = {
+			isa = PBXGroup;
+			children = (
+				3A6B243D298A53EA00DCE026 /* ViewModels */,
+			);
+			path = "PDF Reader";
+			sourceTree = "<group>";
+		};
+		3A6B243D298A53EA00DCE026 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3A6B2435298A53A700DCE026 /* PDFReaderViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3A6B243E298A575200DCE026 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A6B2440298A577400DCE026 /* SharedTestHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		3ABA645C298A450200D8F062 = {
@@ -241,7 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A6B2436298A53A700DCE026 /* EyeCanTests.swift in Sources */,
+				3A6B2441298A577400DCE026 /* SharedTestHelpers.swift in Sources */,
+				3A6B2436298A53A700DCE026 /* PDFReaderViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

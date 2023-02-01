@@ -24,7 +24,11 @@ class PDFReaderViewModel: ObservableObject {
     }
     
     func readFile(from result: Result<URL, Error>) {
-        
+        switch result {
+        case let .success(url):
+            reader.readFile(from: url)
+        default:
+            break
+        }
     }
 }
-

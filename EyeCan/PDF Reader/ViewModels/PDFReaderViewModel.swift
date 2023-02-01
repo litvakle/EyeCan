@@ -11,11 +11,16 @@ import PDFKit
 class PDFReaderViewModel: ObservableObject {
     @Published private(set) var text = ""
     @Published private(set) var error: ViewModelError?
+    @Published private(set) var showError = false
     
     let reader: PDFReader
     
     init(reader: PDFReader) {
         self.reader = reader
+        
+        $error
+            .map { $0 != nil }
+            .assign(to: &$showError)
     }
     
     enum ViewModelError: Equatable {

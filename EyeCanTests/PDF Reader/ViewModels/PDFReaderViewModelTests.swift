@@ -65,6 +65,18 @@ class PDFReaderViewModelTests: XCTestCase {
         
         XCTAssertNil(sut.error)
     }
+    
+    func test_readFile_leadsToSetShowErrorToTrueOnErrorAndToFalseOnSuccessAfterPreviousError() {
+        let (sut, reader) = makeSUT()
+        reader.error = .fileAccessError
+        
+        sut.readFile(from: .success(anyURL()))
+        XCTAssertTrue(sut.showError)
+        
+        reader.error = nil
+        sut.readFile(from: .success(anyURL()))
+        XCTAssertFalse(sut.showError)
+    }
 
     // MARK: - Helpers
     

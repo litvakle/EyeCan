@@ -12,5 +12,10 @@ struct PDFReaderContainerView: View {
     
     var body: some View {
         PDFReaderView(text: vm.text, onFileHasBeenChosen: vm.readFile)
+            .alert("Error", isPresented: $vm.showError) {
+                Button("OK", action: {})
+            } message: {
+                Text(vm.error?.message ?? "")
+            }
     }
 }

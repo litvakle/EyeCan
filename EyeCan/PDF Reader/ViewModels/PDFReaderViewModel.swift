@@ -11,7 +11,7 @@ import PDFKit
 class PDFReaderViewModel: ObservableObject {
     @Published private(set) var text = ""
     @Published private(set) var error: ViewModelError?
-    @Published private(set) var showError = false
+    @Published var showError = false
     
     let reader: PDFReader
     
@@ -26,6 +26,15 @@ class PDFReaderViewModel: ObservableObject {
     enum ViewModelError: Equatable {
         case chooseDialog(error: String)
         case reader(error: String)
+        
+        var message: String {
+            switch self {
+            case let .chooseDialog(error):
+                return "Choose file error: \(error)"
+            case let .reader(error):
+                return "Error reading PDF-file: \(error)"
+            }
+        }
     }
     
     func readFile(from result: Result<URL, Error>) {

@@ -7,20 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A6B242E298A532500DCE026 /* PDFReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B242D298A532500DCE026 /* PDFReaderView.swift */; };
 		3ABA6469298A450200D8F062 /* EyeCanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA6468298A450200D8F062 /* EyeCanApp.swift */; };
 		3ABA646B298A450200D8F062 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA646A298A450200D8F062 /* ContentView.swift */; };
 		3ABA646D298A450400D8F062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA646C298A450400D8F062 /* Assets.xcassets */; };
 		3ABA6470298A450400D8F062 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA646F298A450400D8F062 /* Preview Assets.xcassets */; };
-		3ABA6477298A451900D8F062 /* PDFReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA6476298A451900D8F062 /* PDFReaderView.swift */; };
+		3ABA6479298A454E00D8F062 /* PDFReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA6478298A454E00D8F062 /* PDFReaderViewModel.swift */; };
+		3ABA647F298A4F0600D8F062 /* PDFReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA647E298A4F0600D8F062 /* PDFReader.swift */; };
+		3ABA6481298A4F3C00D8F062 /* PDFKitReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA6480298A4F3C00D8F062 /* PDFKitReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A6B242D298A532500DCE026 /* PDFReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReaderView.swift; sourceTree = "<group>"; };
 		3ABA6465298A450200D8F062 /* EyeCan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeCan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABA6468298A450200D8F062 /* EyeCanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeCanApp.swift; sourceTree = "<group>"; };
 		3ABA646A298A450200D8F062 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3ABA646C298A450400D8F062 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3ABA646F298A450400D8F062 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3ABA6476298A451900D8F062 /* PDFReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReaderView.swift; sourceTree = "<group>"; };
+		3ABA6478298A454E00D8F062 /* PDFReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReaderViewModel.swift; sourceTree = "<group>"; };
+		3ABA647E298A4F0600D8F062 /* PDFReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReader.swift; sourceTree = "<group>"; };
+		3ABA6480298A4F3C00D8F062 /* PDFKitReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A6B242C298A531000DCE026 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A6B242D298A532500DCE026 /* PDFReaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3ABA645C298A450200D8F062 = {
 			isa = PBXGroup;
 			children = (
@@ -55,7 +69,7 @@
 			children = (
 				3ABA6468298A450200D8F062 /* EyeCanApp.swift */,
 				3ABA646A298A450200D8F062 /* ContentView.swift */,
-				3ABA6476298A451900D8F062 /* PDFReaderView.swift */,
+				3ABA647A298A4EC400D8F062 /* PDF Reader */,
 				3ABA646C298A450400D8F062 /* Assets.xcassets */,
 				3ABA646E298A450400D8F062 /* Preview Content */,
 			);
@@ -68,6 +82,33 @@
 				3ABA646F298A450400D8F062 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3ABA647A298A4EC400D8F062 /* PDF Reader */ = {
+			isa = PBXGroup;
+			children = (
+				3ABA647B298A4ECE00D8F062 /* Feature */,
+				3ABA647C298A4ED300D8F062 /* ViewModels */,
+				3A6B242C298A531000DCE026 /* Views */,
+			);
+			path = "PDF Reader";
+			sourceTree = "<group>";
+		};
+		3ABA647B298A4ECE00D8F062 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				3ABA647E298A4F0600D8F062 /* PDFReader.swift */,
+				3ABA6480298A4F3C00D8F062 /* PDFKitReader.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		3ABA647C298A4ED300D8F062 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3ABA6478298A454E00D8F062 /* PDFReaderViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ABA6479298A454E00D8F062 /* PDFReaderViewModel.swift in Sources */,
 				3ABA646B298A450200D8F062 /* ContentView.swift in Sources */,
-				3ABA6477298A451900D8F062 /* PDFReaderView.swift in Sources */,
+				3ABA6481298A4F3C00D8F062 /* PDFKitReader.swift in Sources */,
 				3ABA6469298A450200D8F062 /* EyeCanApp.swift in Sources */,
+				3A6B242E298A532500DCE026 /* PDFReaderView.swift in Sources */,
+				3ABA647F298A4F0600D8F062 /* PDFReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

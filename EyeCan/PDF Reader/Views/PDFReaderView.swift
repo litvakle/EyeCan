@@ -13,18 +13,24 @@ struct PDFReaderView: View {
     let onFileHasBeenChosen: (Result<URL, Error>) -> Void
 
     @State private var showChooseFileDialog = false
+
+    @AccessibilityFocusState(for: .voiceOver) private var isContentFocused: Bool
     
     var body: some View {
         VStack {
             title
             chooseFileButton
             pdfContent
+                .accessibilityFocused($isContentFocused)
         }
         .padding(.horizontal)
         .fileImporter(
             isPresented: $showChooseFileDialog,
             allowedContentTypes: [.pdf],
-            onCompletion: onFileHasBeenChosen
+            onCompletion: { result in
+                onFileHasBeenChosen(result)
+                isContentFocused = true
+            }
         )
     }
     
@@ -43,7 +49,6 @@ struct PDFReaderView: View {
         .buttonStyle(.bordered)
     }
 }
-
 
 struct PDFReaderView_Previews: PreviewProvider {
     static var previews: some View {
